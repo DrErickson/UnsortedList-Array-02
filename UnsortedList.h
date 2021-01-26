@@ -34,7 +34,7 @@ public:
   // Function: Adds item to list.
   // Pre:  List has been initialized.
   //       List is not full.
-  // Post: item is in list.
+  // Post: item is in list if list is not full.  If list is full, no change occurs.
 
   void DeleteItem(int item);
   // Function: Deletes the first element whose key matches item's key.

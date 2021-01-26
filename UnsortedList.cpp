@@ -4,7 +4,6 @@
 UnsortedList::UnsortedList() {
     length = 0;
     currentPos = -1;  // 0
-
 }
 
 void UnsortedList::MakeEmpty() {
@@ -20,14 +19,31 @@ int UnsortedList::GetLength() const {
 }
 
 bool UnsortedList::Contains(int someItem) {
+
+    for (int i = 0; i < length; i++) {
+        if (info[i] == someItem) {
+            return true;
+        }
+    }
+
     return false;
 }
 
 void UnsortedList::PutItem(int item) {
-
+    if (!IsFull()) {
+        info[length++] = item;
+    }
 }
 
 void UnsortedList::DeleteItem(int item) {
+    
+    for (int i = 0; i < length; i++) {
+        if (info[i] == item) {
+            info[i] = info[length - 1];
+            length--;
+            return;
+        }
+    }
 
 }
 
